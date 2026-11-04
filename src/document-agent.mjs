@@ -2,7 +2,7 @@ import { PAYMENT_FIELDS, numberedSources, sourceDigestOf, validateReport } from 
 import { MODEL_BUDGET_EXHAUSTED, reserveModelRequest } from './model-budget.mjs';
 
 const PROVIDERS = Object.freeze({
-  meta: { endpoint: 'https://api.meta.ai/v1/chat/completions', model: 'muse-spark-1.3', options: { reasoning_effort: 'minimal', max_completion_tokens: 2048 } },
+  meta: { endpoint: 'https://api.meta.ai/v1/chat/completions', model: 'muse-spark-1.3', options: { reasoning_effort: 'minimal', max_completion_tokens: 2048 }, requestedTool: true },
   // Meta documents tool_choice "auto" as the only accepted value, and a strict schema outside its subset as HTTP 400.
   // So the report is requested, not forced, and validateReport remains the check on what comes back.
   wonder: { endpoint: 'https://api.meta.ai/v1/chat/completions', model: 'muse-wonder-1.0', options: { reasoning_effort: 'low', max_completion_tokens: 4096 }, requestedTool: true },

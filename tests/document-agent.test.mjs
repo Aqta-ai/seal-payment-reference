@@ -14,15 +14,23 @@ const response = (value = report(), changes = {}) => ({ ok: true, status: 200, t
 const options = { documents, sourceDigest: sourceDigestOf(documents), apiKey: 'fixture-secret' };
 
 test('read-only extraction uses fixed models and raw numbered sources without an authority oracle', async () => {
-  for (const [provider, endpoint, model, requestOptions] of [['meta', 'https://api.meta.ai/v1/chat/completions', 'muse-spark-1.3', { reasoning_effort: 'minimal', max_completion_tokens: 2048 }], ['baseten', 'https://inference.baseten.co/v1/chat/completions', 'meta-models/muse-spark-open-1026', { reasoning_effort: 'low', max_tokens: 4096, stream: false }]]) {
+  for (const [provider, endpoint, model, requestOptions, requestedTool] of [
+    ['meta', 'https://api.meta.ai/v1/chat/completions', 'muse-spark-1.3', { reasoning_effort: 'minimal', max_completion_tokens: 2048 }, true],
+    ['wonder', 'https://api.meta.ai/v1/chat/completions', 'muse-wonder-1.0', { reasoning_effort: 'low', max_completion_tokens: 4096 }, true],
+    ['baseten', 'https://inference.baseten.co/v1/chat/completions', 'meta-models/muse-spark-open-1026', { reasoning_effort: 'low', max_tokens: 4096, stream: false }, false],
+  ]) {
     let calls = 0;
     const result = await runDocumentAnalysis({ ...options, provider, originalAuthority: { beneficiaryAccount: 'SECRET-ORACLE' }, invoice: { amountMinor: 9999999 }, fetchImpl: async (url, init) => {
       calls += 1; assert.equal(url, endpoint);
       const body = JSON.parse(init.body);
       assert.equal(body.model, model);
       for (const [key, value] of Object.entries(requestOptions)) assert.equal(body[key], value);
+      for (const key of ['max_tokens', 'max_completion_tokens', 'stream']) if (!Object.hasOwn(requestOptions, key)) assert.equal(Object.hasOwn(body, key), false);
       assert.deepEqual(body.tools.map(tool => tool.function.name), ['report_payment']);
-      assert.equal(body.tools[0].function.strict, true);
+      assert.equal(body.parallel_tool_calls, false);
+      assert.deepEqual(body.tool_choice, requestedTool ? 'auto' : { type: 'function', function: { name: 'report_payment' } });
+      assert.equal(Object.hasOwn(body.tools[0].function, 'strict'), !requestedTool);
+      if (!requestedTool) assert.equal(body.tools[0].function.strict, true);
       const sourceInput = body.messages[1].content;
       assert.match(sourceInput, /2: Amount: 71899/);
       assert.equal(sourceInput.includes('SECRET-ORACLE'), false);
