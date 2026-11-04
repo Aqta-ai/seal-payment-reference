@@ -1,0 +1,14 @@
+.env
+.env.local
+node_modules/
+coverage/
+*.log
+
+.data/
+
+# Private Seal logo, served only from SANDBOX_BRAND_MARK; never committed.
+brand-mark.svg
+brand-mark.png
+aqta-mark.svg
+font-*.woff2
+private-brand/

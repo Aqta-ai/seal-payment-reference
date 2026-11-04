@@ -1,0 +1,20 @@
+/* Meta Ray-Ban Display adds light over the wearer's view, so black is see-through and text stays bright. */
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #000; color: #fff; }
+body { font: 500 clamp(16px, 3.7vmin, 26px)/1.35 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 720px; min-height: 100vh; margin: 0 auto; padding: 5vmin 6vmin; display: flex; flex-direction: column; gap: .55em; overflow-wrap: anywhere; }
+h1 { margin: 0; font-size: 1.75em; line-height: 1.15; font-weight: 700; outline: none; }
+p { margin: 0; }
+#lead { color: #e8e8e8; }
+#status:empty, #lead:empty { display: none; }
+#status { color: #fff; font-weight: 700; }
+dl { margin: 0; padding: .55em .75em; border: 2px solid #9a9a9a; border-radius: 12px; }
+dl div { display: flex; justify-content: space-between; gap: 1em; padding: .18em 0; }
+dt { color: #d0d0d0; }
+dd { margin: 0; font-weight: 700; text-align: right; }
+dd[data-changed] { text-decoration: underline; text-underline-offset: .2em; }
+#actions { display: grid; gap: .4em; }
+button { min-height: 44px; padding: .35em .9em; font: inherit; font-weight: 700; color: #fff; background: #000; border: 2px solid #fff; border-radius: 12px; cursor: pointer; }
+button[data-main] { background: #fff; color: #000; }
+button:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+.scope { margin-top: auto; padding-top: .4em; color: #c4c4c4; font-size: .78em; }

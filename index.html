@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Seal | The account change</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/ron/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/ron/ron-face-180.png">
+</head>
+<body>
+<div class="saas">
+<aside class="sidebar" aria-label="Workspace">
+  <a class="wordmark" href="/"><span id="brand-slot" class="brand-slot"></span>Seal <span>Payment test</span></a>
+  <div class="workspace"><strong>Harbour Print</strong><span>Accounts payable · synthetic</span></div>
+  <nav class="side-nav" aria-label="Sections">
+    <a href="/?view=overview" data-nav="overview"><span class="nav-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>Overview</span></a>
+    <a href="/?view=approvals" data-nav="approvals"><span class="nav-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h4l2 3h4l2-3h4"/><path d="M6 5h12l2 8v6H4v-6z"/></svg>Approvals</span><span id="nav-approvals" class="nav-count" hidden>0</span></a>
+    <a href="/?view=runs" data-nav="runs"><span class="nav-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M10.5 8.8v6.4l5-3.2z"/></svg>Agent runs</span></a>
+    <a href="/?view=payments" data-nav="payments"><span class="nav-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 15h4"/></svg>Payments</span></a>
+    <a href="/?view=policies" data-nav="policies"><span class="nav-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6.5h10M10 12h10M10 17.5h10"/><path d="m4 6.5 1.2 1.2L7.5 5.4M4 12l1.2 1.2 2.3-2.3M4 17.5l1.2 1.2 2.3-2.3"/></svg>Policies</span></a>
+    <a href="/?view=privacy" data-nav="privacy"><span class="nav-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 5 6.5v5.5c0 4 3 7.3 7 8.5 4-1.2 7-4.5 7-8.5V6.5z"/><path d="m9.2 12 2 2 3.8-3.8"/></svg>Privacy and security</span></a>
+    <a href="/?view=teams" data-nav="teams" class="nav-teams"><span class="nav-label"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3"/><path d="M3.5 19.5c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/><path d="M15.5 5.8a3 3 0 0 1 0 5.4M17.5 14.4c1.8.8 3 2.6 3 4.6"/></svg>Seal for your team</span></a>
+  </nav>
+  <div class="side-cta"><img src="/ron/ron-wave.png" alt="Rón, the Seal mascot, waving" width="480" height="255" loading="lazy"><p>Use Seal on your own agent.</p><a href="https://app.aqta.ai/try" rel="noopener">Request sandbox access</a></div>
+</aside>
+<div class="app-shell">
+  <header class="topbar"><span id="page-title" class="page-title">Overview</span><div class="topbar-right"><a class="primary small" href="/?view=run">New payment run</a><span id="model-pill" class="model-pill"><i aria-hidden="true"></i><span>Checking model…</span></span><span class="simulation">Synthetic payments. No real funds.</span></div></header>
+  <main>
+    <section id="view-overview" class="view" aria-labelledby="page-title">
+      <div class="kpis">
+        <div class="kpi"><span class="kpi-head"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>Sent</span><strong id="kpi-sent">€0.00</strong><small id="kpi-sent-note">0 payments recorded</small></div>
+        <div class="kpi"><span class="kpi-head"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>Waiting for you</span><strong id="kpi-waiting">0</strong><small>Changed details held for a person</small></div>
+        <div class="kpi"><span class="kpi-head"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m9 9 6 6M15 9l-6 6"/></svg>Refused attempts</span><strong id="kpi-refused">0</strong><small>Payments the approval did not cover</small></div>
+        <div class="kpi"><span class="kpi-head"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M10.5 8.8v6.4l5-3.2z"/></svg>Agent runs</span><strong id="kpi-runs">0</strong><small>Invoices the agent handled</small></div>
+      </div>
+      <a id="tour-start" class="tour-card" href="/?view=run&amp;tour=1"><img src="/ron/ron-inspect.png" alt="" width="480" height="255"><span><strong>Take the walkthrough</strong><small>Follow one invoice from a changed account to approval, payment and proof.</small></span></a>
+      <div class="charts">
+        <section class="panel chart-panel" aria-labelledby="chart-outcomes-title"><h2 id="chart-outcomes-title">What happened to each payment</h2><p class="chart-sub">Every run in this workspace, by outcome</p><div id="chart-outcomes" class="chart"></div><details class="chart-table"><summary>Show as a table</summary><table id="table-outcomes"></table></details></section>
+        <section class="panel chart-panel" aria-labelledby="chart-money-title"><h2 id="chart-money-title">Money moved and held back</h2><p class="chart-sub">Simulated euros: sent after approval, against payments refused or still waiting</p><div id="chart-money" class="chart"></div><details class="chart-table"><summary>Show as a table</summary><table id="table-money"></table></details></section>
+      </div>
+      <div class="panels">
+        <section class="panel"><h2>Needs your decision</h2><div id="overview-approvals" class="run-list"></div></section>
+        <section class="panel"><h2>Recent runs</h2><div id="overview-runs" class="run-list"></div><a class="panel-link" href="/?view=runs">All runs</a></section>
+      </div>
+    </section>
+    <section id="view-approvals" class="view" hidden><p class="view-intro">Payments the agent wanted to make that its approval did not cover. Approve the exact amount and account, or decline.</p><div id="approvals-list" class="run-list panel"></div></section>
+    <section id="view-runs" class="view" hidden><p class="view-intro">Every invoice the agent has handled, newest first.</p><div id="runs-list" class="run-list panel"></div></section>
+    <section id="view-payments" class="view" hidden><p class="view-intro">Payments the executor recorded. Each uses one approval once.</p><div id="payments-list" class="run-list panel"></div></section>
+    <section id="view-policies" class="view" hidden>
+      <div class="policies">
+        <article class="policy"><h2>Exact match</h2><p>A payment runs only if supplier, account, amount and currency equal an approval.</p></article>
+        <article class="policy"><h2>Changed details wait for a person</h2><p>A changed account, amount or currency needs review. A different supplier needs a new case.</p></article>
+        <article class="policy"><h2>One approval, one payment</h2><p>An approval is used once. A retry or replay of a paid invoice is refused.</p></article>
+        <article class="policy"><h2>The agent proposes, it cannot approve</h2><p>The agent reads documents and calls tools. Approval comes only from the review screen.</p></article>
+      </div>
+    </section>
+    <section id="view-privacy" class="view" hidden>
+      <p class="view-intro">What this workspace stores, what the agent can do, and what it cannot.</p>
+      <div class="policies">
+        <article class="policy"><h2>Synthetic data only</h2><p>Suppliers, invoices, accounts and amounts are made up. Do not enter real names, account numbers or codes.</p></article>
+        <article class="policy"><h2>No real money moves</h2><p>Payments are rows in a simulated ledger. No bank or payment service is connected.</p></article>
+        <article class="policy"><h2>Keys stay on the server</h2><p>The model provider key is never sent to the browser, and literal key echoes are checked before replies reach the browser. Do not enter secrets into test documents.</p></article>
+        <article class="policy"><h2>The agent cannot approve</h2><p>It reads documents and proposes payments. Approval needs the review screen, a session cookie the page cannot read, and your confirmation of the exact values. When hosted admission is configured, Google sign-in controls demo access; it does not establish real payment authority.</p></article>
+        <article class="policy"><h2>What is stored</h2><p>Saved document text and workflow events are held in the demo database. Model traces are held in memory. When hosted admission is configured, the demo stores your Google account identifier, email and access-review answer in a separate registry. Demo workflow storage can be lost when the instance is replaced.</p></article>
+        <article class="policy"><h2>Strict browser rules</h2><p>Necessary cookies maintain the review session and, when configured, hosted Google sign-in. There are no advertising trackers.</p></article>
+      </div>
+    </section>
+    <section id="view-teams" class="view" hidden>
+      <div class="teams-hero"><div><h2>AI acts. Keep the receipt.</h2><p>Your agents already prepare payments, refunds and record changes. Seal checks each action against what a person approved, before it runs, and keeps a signed record your customer’s reviewer can check without us.</p></div><img src="/ron/ron-phone.png" alt="" width="480" height="255"></div>
+      <ol class="offer">
+        <li><span>1</span><h3>Evidence review</h3><p>Thirty minutes, free. We look at one workflow and the questions your customers already ask about it.</p></li>
+        <li><span>2</span><h3>Proof of value</h3><p>Seal on a copy of one real workflow in a few working days, ending with an evidence pack your reviewer can assess.</p></li>
+        <li><span>3</span><h3>Annual licence</h3><p>Priced by the workflows in scope, the retention you need, and how quickly you need an answer about a past decision.</p></li>
+      </ol>
+      <p class="teams-fit">For teams building AI for regulated industries: payments, lending, insurance and healthcare.</p>
+      <div class="teams-actions"><a class="primary" href="mailto:hello@aqta.ai?subject=Seal%20evidence%20review">Book an evidence review</a><a class="secondary" href="https://app.aqta.ai/try" rel="noopener">Request sandbox access</a></div>
+    </section>
+    <section id="view-run" class="view" hidden>
+    <div id="tour" class="tour" hidden role="region" aria-label="Walkthrough"><span id="tour-step" class="tour-step"></span><div class="tour-body"><p id="tour-text"></p><p id="tour-hint" class="tour-hint" hidden></p></div><button id="tour-next" class="tour-next" type="button" hidden>Next</button><a id="tour-link" class="tour-link" hidden></a><a id="tour-link-2" class="tour-link" hidden></a><button id="tour-end" class="text-button" type="button">End walkthrough</button></div>
+    <header class="intro"><h1>New account.<br>Old approval.</h1><p>Let the agent handle the invoice.<br>You decide the change.</p><img class="intro-mascot" src="/mascot.png" alt="Rón, the Seal mascot" width="640" height="425"></header>
+    <p id="error" role="alert" hidden></p>
+    <ol id="document-phases" class="document-phases" aria-label="Document workflow progress" hidden><li data-phase="documents">Documents</li><li data-phase="proposal">Proposed change</li><li data-phase="decision">Your decision</li><li data-phase="outcome">Outcome</li></ol>
+    <section id="document-entry" class="document-entry" aria-labelledby="document-entry-heading" hidden>
+      <h2 id="document-entry-heading" tabindex="-1">Add test documents</h2>
+      <p class="form-intro">Use synthetic details only. The model reads an invoice and a later message. All payments stay in this simulation.</p>
+      <form id="document-form">
+        <fieldset><legend>Original permission for this simulation</legend><p id="permission-help" class="field-help">Enter the details the agent already has permission to use. These test details are separate from the documents and do not establish real payment approval.</p>
+          <div class="permission-fields"><label>Supplier name<input id="permission-name" name="supplierName" value="Harbour Print" required maxlength="160" autocomplete="off" aria-describedby="permission-help"></label><label>Beneficiary account<input id="permission-account" name="beneficiaryAccount" value="DE00-TEST-0000-1280" required maxlength="64" pattern="[A-Z0-9][A-Z0-9\-]{4,63}" autocomplete="off" autocapitalize="characters" spellcheck="false"></label><label>Amount<input id="permission-amount" name="amount" value="250000.00" required inputmode="decimal" pattern="[0-9]+([.][0-9]{1,2})?" autocomplete="off" aria-describedby="amount-help"><span id="amount-help" class="field-help">Decimal amount, for example 250000.00.</span></label><label>Currency<select id="permission-currency" name="currency"><option>EUR</option><option>GBP</option><option>USD</option></select></label></div>
+        </fieldset>
+        <div class="document-inputs">
+          <fieldset><legend>Invoice</legend><label for="input-invoice">Invoice text</label><textarea id="input-invoice" name="invoice" rows="7" required maxlength="12000" spellcheck="false" aria-describedby="document-limits invoice-file-status">Supplier: Harbour Print
+Amount: 250000.00
+Currency: EUR
+Beneficiary account: DE00-TEST-0000-1280</textarea><div class="photo-read"><img src="/samples/invoice.jpg" alt="Sample photo of a synthetic invoice" width="88" height="112" loading="lazy"><div><button id="read-invoice" class="secondary" type="button" data-preset="invoice">Read the sample photo</button><p class="field-help">The model transcribes the photo into the box. Check the text before creating the case.</p></div></div><label class="file-label" for="file-invoice">Or choose a text file<input id="file-invoice" type="file" accept=".txt,.md,text/plain,text/markdown" aria-describedby="invoice-file-status"></label><p id="invoice-file-status" class="field-help" role="status"></p></fieldset>
+          <fieldset><legend>Later message</legend><label for="input-instruction">Message text</label><textarea id="input-instruction" name="instruction" rows="7" required maxlength="12000" spellcheck="false" aria-describedby="document-limits instruction-file-status">Please pay Harbour Print 250000.00 EUR to DE00-TEST-0000-1289.</textarea><div class="photo-read"><img src="/samples/instruction.jpg" alt="Sample photo of a synthetic supplier letter" width="88" height="112" loading="lazy"><div><button id="read-instruction" class="secondary" type="button" data-preset="instruction">Read the sample photo</button><p class="field-help">The model transcribes the photo into the box. Check the text before creating the case.</p></div></div><label class="file-label" for="file-instruction">Or choose a text file<input id="file-instruction" type="file" accept=".txt,.md,text/plain,text/markdown" aria-describedby="instruction-file-status"></label><p id="instruction-file-status" class="field-help" role="status"></p></fieldset>
+        </div>
+        <p id="document-limits" class="field-help">Text only: .txt or .md in UTF-8. Up to 12,000 characters per document, 24,000 in total, 300 lines per document and 2,000 characters per line. Photos: the two synthetic sample photos only; PDFs and other images are not supported.</p>
+        <label class="confirm"><input id="permission-confirm" type="checkbox" required><span>I confirm these displayed details are the original permission for this synthetic case.</span></label>
+        <p id="form-error" class="form-error" role="alert" hidden></p>
+        <div class="form-actions"><button id="create-document-case" class="primary" type="submit">Create document case</button><button id="cancel-document-case" class="text-button" type="button">Cancel</button></div>
+        <p class="field-help">Creating a case saves its documents. Analyse them in the next step. To change a saved document, create a new case.</p>
+      </form>
+    </section>
+    <div class="workbench">
+      <section class="source-pane" aria-label="Invoice and supplier email">
+        <div class="phone"><div class="phone-notch" aria-hidden="true"></div>
+        <div class="source-top"><span id="source-supplier">Harbour Print</span><span id="source-mode">Example documents</span></div>
+        <div class="document-tabs" role="tablist" aria-label="Source documents"><button id="tab-email" role="tab" aria-selected="true" aria-controls="email-panel" tabindex="0">Supplier email</button><button id="tab-invoice" role="tab" aria-selected="false" aria-controls="invoice-panel" tabindex="-1">Invoice</button></div>
+        <div id="email-panel" role="tabpanel" aria-labelledby="tab-email"><p class="document-title">A change to the payment details</p><p id="email" class="document-copy">Please pay €250,000.00 EUR to DE00-TEST-0000-1289.</p></div>
+        <div id="invoice-panel" role="tabpanel" aria-labelledby="tab-invoice" hidden><p class="document-title">Supplier invoice</p><p id="invoice" class="document-copy">Supplier: Harbour Print
+Amount: €250,000.00
+Currency: EUR
+Beneficiary account: DE00-TEST-0000-1280</p></div>
+        </div>
+        <div id="legacy-comparison" class="account-change" aria-label="Account comparison"><div><span>Original approval</span><code id="approved-account">DE00-TEST-0000-1280</code></div><svg class="change-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg><div><span>Requested account</span><code id="requested-account">DE00-TEST-0000-1289</code></div></div>
+        <p id="account-note" class="source-note">The amount stays the same. The destination changes.</p>
+        <section id="source-comparison" class="source-comparison" aria-labelledby="comparison-heading" hidden><h3 id="comparison-heading">Permission and proposal</h3><div class="comparison-scroll"><table><thead><tr><th scope="col">Detail</th><th scope="col">Original permission</th><th scope="col">Model proposal</th></tr></thead><tbody id="comparison-values"></tbody></table></div></section>
+      </section>
+      <section class="decision-pane" aria-labelledby="agent-heading">
+        <div class="decision-top"><span class="agent-label">Agent</span><span id="provider">Checking model…</span></div>
+        <div class="agent-head"><h2 id="agent-heading" tabindex="-1">What happens next?</h2><figure class="ron-say" aria-hidden="true"><img id="ron-pose" src="/ron/ron-think.png" alt="" width="480" height="255"><figcaption id="ron-line">Will the old approval cover the new account?</figcaption></figure></div>
+        <p id="status" role="status" aria-live="polite">Connecting to the model.</p>
+        <ol id="steps" class="steps" aria-label="What the agent did"></ol>
+        <div id="start-controls" class="start-controls">
+          <p class="start-help">Start with the unchanged invoice, then try a changed account.</p>
+          <button id="start-legitimate" class="primary">Run unchanged invoice</button>
+          <button id="start-conflict" class="secondary">Try a changed account</button>
+          <details class="other-test-cases">
+            <summary>Other test cases</summary>
+            <button id="use-documents" class="text-button" aria-controls="document-entry" aria-expanded="false" hidden>Add test documents</button>
+          </details>
+        </div>
+        <section id="document-controls" class="document-controls" aria-label="Document case actions" hidden><p id="preset-permission-note" class="field-help" hidden>The original permission is pre-set for this synthetic example, independently of the documents and the model.</p><button id="analyse-documents" class="primary">Analyse documents</button><p id="analysis-note" class="field-help">The model reads these saved documents. This step cannot make a payment.</p><div id="proposal" hidden><h3 id="proposal-heading">Proposed payment</h3><p id="proposal-note" class="field-help"></p><dl id="proposal-facts" class="proposal-facts"></dl><ul id="proposal-questions" class="proposal-questions"></ul></div><button id="continue-proposal" class="primary" hidden>Continue with this proposal</button><button id="new-document-case" class="text-button">Edit documents in a new case</button></section>
+        <div id="idle-art" hidden></div>
+        <div id="trace" class="timeline" aria-label="Recorded workflow events"></div>
+        <div id="review" hidden>
+          <dl id="review-values" class="review-values"></dl>
+          <label class="confirm"><input id="confirm" type="checkbox"><span>I reviewed these exact payment details.</span></label>
+          <div class="review-actions"><button id="approve" class="primary">Approve this payment</button><button id="decline" class="text-button">Decline change</button></div>
+          <details class="review-detail"><summary>Review identifier</summary><p id="review-digest" class="technical"></p></details>
+        </div>
+        <button id="resume" class="primary" hidden>Continue with this approval</button>
+        </section>
+      <aside class="account-pane" aria-labelledby="account-heading">
+        <div class="account-top"><span id="account-heading">Simulated account</span><span id="ledger-count" class="count">0 payments</span></div>
+        <p class="money-label">Sent from this account</p>
+        <p id="money-sent" class="money">€0.00</p>
+        <div id="ledger" class="ledger" hidden></div>
+        <div id="account-empty" class="account-empty"><p>Nothing has left the account.</p></div>
+        <p class="account-note">The balance moves only when the executor records a payment.</p>
+      </aside>
+    </div>
+    <section id="proof-checks" class="proof-checks" aria-labelledby="proof-heading" hidden>
+      <h2 id="proof-heading" tabindex="-1">Check the same payment</h2>
+      <p>Verify the signed record, then change one cent in a copy or try the same run again.</p>
+      <div class="proof-actions">
+        <div><button id="check-evidence" class="secondary" type="button">Verify this record</button><p id="evidence-status" class="proof-status" role="status" aria-live="polite"></p></div>
+        <div><button id="check-edited-copy" class="secondary" type="button">Change one cent in a copy</button><p id="edited-copy-status" class="proof-status" role="status" aria-live="polite"></p></div>
+        <div><button id="check-repeat-run" class="secondary" type="button">Try the same run again</button><p id="repeat-run-status" class="proof-status" role="status" aria-live="polite"></p></div>
+      </div>
+      <section id="bench" class="bench" aria-labelledby="bench-heading" hidden>
+        <h3 id="bench-heading">Edit a copy of the payment record</h3>
+        <p>Compare the saved payment with an editable ledger copy. Changing this copy cannot make or alter a payment.</p>
+        <fieldset id="bench-fields" class="record-copy-fields" aria-describedby="bench-fields-note" disabled>
+          <legend class="sr-only">Editable copy</legend>
+          <section class="record-original" aria-labelledby="bench-original-heading">
+            <h4 id="bench-original-heading">Original payment</h4>
+            <dl>
+              <dt>Amount</dt><dd id="bench-original-amount"></dd>
+              <dt>Beneficiary account</dt><dd id="bench-original-account"></dd>
+              <dt>Currency</dt><dd id="bench-original-currency"></dd>
+            </dl>
+          </section>
+          <div class="record-editable">
+            <h4>Editable copy</h4>
+            <label for="bench-amount">Amount <span id="bench-amount-change" class="record-copy-change"></span></label>
+            <input id="bench-amount" inputmode="decimal" maxlength="32" autocomplete="off" spellcheck="false" aria-describedby="bench-amount-help">
+            <p id="bench-amount-help" class="record-copy-help">Decimal amount, with up to two decimal places.</p>
+            <label for="bench-account">Beneficiary account <span id="bench-account-change" class="record-copy-change"></span></label>
+            <textarea id="bench-account" rows="2" maxlength="64" autocomplete="off" spellcheck="false"></textarea>
+            <label for="bench-currency">Currency <span id="bench-currency-change" class="record-copy-change"></span></label>
+            <input id="bench-currency" maxlength="3" autocomplete="off" spellcheck="false">
+          </div>
+        </fieldset>
+        <p id="bench-fields-note" class="record-copy-help">Verify a signed payment record to edit its copy.</p>
+        <div class="record-copy-actions">
+          <button id="bench-check" class="secondary" type="button" disabled>Check this copy</button>
+          <button id="bench-reset" class="secondary" type="button" disabled>Reset to the signed record</button>
+        </div>
+        <p id="bench-status" class="proof-status" role="status" aria-live="polite"></p>
+        <details class="bench-technical">
+          <summary>Technical details: edit the JSON copy</summary>
+          <p>The fields above change the copied ledger. This JSON also lets you inspect or edit the copied signed events. Both use the same verifier and pinned demo key.</p>
+          <label class="sr-only" for="bench-json">Record copy as JSON</label>
+          <textarea id="bench-json" spellcheck="false" autocomplete="off" rows="14" disabled></textarea>
+        </details>
+      </section>
+      <p class="scope">Demo reference key, separate from production Seal. These checks do not establish completeness or the approver’s identity.</p>
+    </section>
+    <details id="inspection" class="inspection"><summary>Inspect evidence <span>Tools, approvals and scope</span></summary><div class="inspection-body"><h2>Model tool calls</h2><div id="tool-records"><p>Run a workflow to inspect its actual calls.</p></div><h2>Current approval</h2><pre id="approval">No workflow started.</pre><h2>Executor events</h2><pre id="events">[]</pre><section id="reference-evidence" hidden><h2>Reference journal</h2><p>This local reference key is separate from the production Seal key and ATTESTATION-v1. It does not establish who approved a change or whether every event was captured. Model traces are held in server memory.</p><pre id="reference-metadata"></pre></section><p id="scope-note" class="scope">One demo ledger. Start a workflow to inspect its records. No bank or external payment service is connected. The review screen does not establish real-world identity. Verifying a supplier’s account remains a separate business check.</p><button id="export" class="secondary" hidden>Save run record</button></div></details>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-brand"><strong>Seal</strong><span>Checks what an AI agent is about to do against what a person approved, before it runs.</span></div>
+    <nav class="footer-cols" aria-label="Footer">
+      <div><h2>Workspace</h2><a href="/?view=overview">Overview</a><a href="/?view=approvals">Approvals</a><a href="/?view=payments">Payments</a></div>
+      <div><h2>Trust</h2><a href="/?view=policies">Policies</a><a href="/?view=privacy">Privacy and security</a><a href="/LICENSE">Code licence</a><a href="/ASSETS.md">Artwork</a></div>
+      <div><h2>Company</h2><a href="/?view=teams">Seal for your team</a><a href="https://aqta.ai" rel="noopener">aqta.ai</a><a href="mailto:hello@aqta.ai">hello@aqta.ai</a></div>
+    </nav>
+    <div class="footer-base"><span>© 2026 Aqta Technologies Limited, Dublin</span><span>Synthetic payments only. No real funds move.</span></div>
+  </footer>
+</div>
+</div>
+<script type="module" src="/app.js"></script>
+<script type="module" src="/shell.js"></script>
+</body>
+</html>

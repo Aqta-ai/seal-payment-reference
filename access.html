@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="referrer" content="no-referrer">
+  <title>Try the payment demo | Seal</title>
+  <link rel="icon" href="/ron/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="stylesheet" href="/access.css">
+</head>
+<body class="demo-access-page">
+  <main class="demo-access" aria-labelledby="access-heading">
+    <header class="demo-access-brand"><span class="demo-access-wordmark">Seal</span><span>Synthetic demo</span></header>
+    <h1 id="access-heading">Try a payment with Seal</h1>
+    <p class="demo-access-intro">Run a synthetic payment, change the account, then check the record.</p>
+
+    <p id="access-loading" class="demo-access-status" role="status">Checking your access…</p>
+    <div id="access-error" class="demo-access-error" role="alert" hidden></div>
+    <button id="access-retry" class="demo-access-secondary" type="button" hidden>Try again</button>
+
+    <section id="access-anonymous" aria-label="Sign in" hidden>
+      <a id="access-google" class="demo-access-primary" href="/auth/google?return=%2F%3Fview%3Drun">Continue with Google</a>
+      <p class="demo-access-invitation">Use the Google account on your invitation.</p>
+    </section>
+
+    <section id="access-signed-in" aria-label="Your demo access" hidden>
+      <p class="demo-access-identity">Signed in as <strong id="access-email"></strong></p>
+      <form id="access-form" method="post" action="/auth/intake" hidden>
+        <label for="access-building">What are you building?</label>
+        <p id="access-building-help" class="demo-access-help">A short answer helps us review demo access.</p>
+        <textarea id="access-building" name="building" required maxlength="1000" rows="3" aria-describedby="access-building-help access-building-count"></textarea>
+        <span id="access-building-count" class="demo-access-count">0 of 1,000 characters</span>
+        <button id="access-save" class="demo-access-primary" type="submit">Continue to demo</button>
+      </form>
+      <div id="access-result" class="demo-access-result" hidden>
+        <p id="access-result-copy" role="status"></p>
+        <a id="access-open" class="demo-access-primary" href="/?view=run" hidden>Open payment demo</a>
+      </div>
+    </section>
+    <button id="access-logout" class="demo-access-text" type="button" hidden>Sign out</button>
+    <details class="demo-access-privacy"><summary>What we store</summary><p>We store your Google account identifier, email and answer to review demo access. Access does not include the Seal dashboard.</p></details>
+    <p class="demo-access-scope">Synthetic payments. No real funds.</p>
+  </main>
+  <script src="/access.js" defer></script>
+</body>
+</html>

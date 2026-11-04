@@ -1,0 +1,10 @@
+import { parentPort, workerData } from 'node:worker_threads';
+import { WorkflowStore } from '../src/workflow.mjs';
+import { createReferenceSigner } from '../src/reference-journal.mjs';
+const { filename, privateKeyPem, workflowId, intent, gate, now } = workerData;
+const store = new WorkflowStore({ filename, referenceSigner: createReferenceSigner({ privateKeyPem }), now: () => now });
+parentPort.postMessage({ ready: true });
+Atomics.wait(new Int32Array(gate), 0, 0);
+const result = store.executePayment(workflowId, intent);
+store.close();
+parentPort.postMessage({ result });
